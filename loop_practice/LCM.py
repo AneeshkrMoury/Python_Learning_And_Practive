@@ -2,6 +2,7 @@ num_one = int(input("enter first number : "))
 num_two = int(input("enter second number : "))
 
 greater_num = None
+
 if num_one > num_two:
     greater_num = num_one
 else:
