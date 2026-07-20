@@ -1,0 +1,13 @@
+# PROBLEM 1
+# Create & Access **  Easy
+# Create a list of your 5 favourite programming languages. Print the first and the last one using both positive and negative indexing.
+
+pro_language = []
+
+for i in range(1, 6):
+    lang = input(f"Enter your {i} favourite lagugae : ")
+    pro_language.append(lang)
+
+
+print(f"Favorite language is : {pro_language[0]}")
+print(f"least Favorite language is : {pro_language[-1]}")
