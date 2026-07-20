@@ -1,0 +1,15 @@
+# PROBLEM 3
+# Todo List Manager Start with Add todos = ["wake up", "study"] . 
+# Then:
+# Add "exercise" at the end
+# Add "meditate" at the very beginning 
+# Remove "study" 
+# Replace the last item with "sleep"
+# Print the final list
+
+todos = ["wake up", "study"]
+todos.append("exercise")
+todos.insert(0, "meditate")
+todos.remove("study")
+todos[-1] = "sleep"
+print(f"final todos list : {todos}")
