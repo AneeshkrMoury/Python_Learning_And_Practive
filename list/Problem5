@@ -1,0 +1,9 @@
+# Problem 5
+# Unpack the Coordinates
+# You have 
+# data = [101, "Varanasi", 25.3, 82.9] = id, city, lat, lon. Unpack it
+# into four named variables in a single line and print a sentence using them
+
+data = [101, "Varanasi", 25.3, 82.9]
+id, city, lat, lon = data
+print(f"The city with ID {id} is {city}. Its coordinates are latitude {lat} and longitude {lon}.")
