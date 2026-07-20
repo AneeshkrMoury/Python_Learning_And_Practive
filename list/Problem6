@@ -1,0 +1,35 @@
+# Problem 5
+# The Copy Trap
+# Create original = [1, 2, 3] . Make a copy called backup . Append 99 to backup
+# Print both lists and explain (in a comment) why original did NOT change. 
+# Then deliberately create the bug using = and observe the difference
+
+original_list = [1, 2, 3]
+backup = original_list.copy()
+backup.append(4)
+print(f"original list = {original_list} \nbackup list = {backup}")
+
+original_list = [1, 2, 3]
+backup = original_list      # Bug!
+backup.append(99)
+
+print(f"original list = {original_list} \nbackup list = {backup}")
+
+# In Python, a list is created once in memory, and the variable
+# original_list stores a reference (address) to that list.
+#
+# When we write:
+# backup = original_list
+#
+# Python does NOT create a new list. Instead, the variable 'backup'
+# stores the same reference as 'original_list'. This means both
+# variables point to the exact same list in memory.
+#
+# Therefore, when we modify the list through 'backup', such as by
+# using backup.append(99), the original list is also modified because
+# both variables refer to the same object.
+#
+# To create an independent copy, we should use:
+# backup = original_list.copy()
+# or
+# backup = original_list[:]
