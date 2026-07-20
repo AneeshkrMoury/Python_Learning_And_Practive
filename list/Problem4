@@ -1,0 +1,17 @@
+# Problem 4
+# Student Record (Nested)
+# Create a nested list where each inner list is [name, marks] for 3 students. Print the name of the 2nd student and the marks of the 3rd student
+
+student_records = []
+
+
+for i in range(3):
+    
+    name = input(f"Enter the Name of {i+1} student : ")
+    marks = int(input(f"Enter the Marks of {i+1} student : "))
+    student = [name, marks]
+    
+    student_records.append(student)
+
+print(f"Nmae of second stunde from student_record list is : {student_records[1][0]}")
+print(f"Marks of third stundent from student_record list is : {student_records[2][1]}")
