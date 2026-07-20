@@ -1,0 +1,21 @@
+# CHALLENGE
+# Mini Leaderboard
+# Given scores = [40, 80, 65, 95, 70] , without using sort() yet — find the highest and lowest using slicing tricks after you learn them, OR rearrange manually using index assignment. Print "Winner is at position X". 
+
+Given_scores = [40, 80, 65, 95, 70]
+highest = Given_scores[0]
+lowest = Given_scores[0]
+Winner = 0
+
+for i in range(len(Given_scores)):
+
+    if Given_scores[i] > highest:
+        highest = Given_scores[i]
+        Winner = i
+
+    if Given_scores[i] < lowest:
+        lowest = Given_scores[i]
+
+
+print(f"Highest Score = {highest} \nLowest Score = {lowest} \nWinner is at position = {Winner+1}")
+
