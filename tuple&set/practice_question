@@ -1,0 +1,61 @@
+#practive Question 
+# Remove Duplicates with a Set
+# Given nums = [4, 1, 2, 2, 3, 4, 5, 1] , use a set to get only the unique
+# numbers, then print how many unique numbers there are.
+# Uses: set() + len()
+
+Given_nums = [4, 1, 2, 2, 3, 4, 5, 1]
+nums  = list(set(Given_nums))
+
+print(f"unique element list : {nums} \nNo of unique elements : {len(nums)}")
+
+# You have a tuple student = ("Amit", 21, "BCA", 8.5) = name, age, course, gpa.
+# Unpack it into four variables in one line and print a sentence: "Amit (21) studies
+# BCA with GPA 8.5" 
+student = ("Amit", 21, "BCA", 8.5)
+name, age, course, gpa = student
+print(f"student name {name} age {age} completed {course} and  got the {gpa} gpa")
+
+# Swap Without a Temp Variable
+# Take two numbers from the user and swap their values using tuple unpacking (no
+# third variable). Print before and after.
+
+n1 = 1 
+n2 = 2
+n1 , n2 = n2, n1
+print(n1,n2)
+
+# Unique Words Counter
+# Take a sentence from the user. Split it into words and print how many unique
+# words it contains (ignore repeats).
+
+s = input("Enter a sentence : ")
+s = s.replace(" ", "")
+s = set(s)
+print(f"number of unique words in entered sentence -->>> {len(s)}")
+
+# Who Dropped Out?
+# registered = {"A", "B", "C", "D", "E"} signed up, but attended = {"A", "C","E"} showed up. Use set difference to find who did NOT attend
+
+registered = {"A", "B", "C", "D", "E"}
+attended = {"A", "C","E"}
+print(f"Not attended : {registered - attended}")
+
+# List vs Set Speed Test
+# Create a list and a set both containing numbers 0 to 999999. Check if 999999 is present in each. Using the time module, measure and compare how long each lookup takes. Explain the result in a comment.
+
+import time
+
+l = []
+s = set()
+
+for i in range(1000001):
+    l.append(i)
+    s.add(i)
+
+print(time.time())
+print(999999 in l)
+print(time.time())
+print(time.time())
+print(999999 in s)
+print(time.time())
