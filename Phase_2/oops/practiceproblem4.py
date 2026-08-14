@@ -185,3 +185,68 @@ a.remove_item(a.items[1])
 
 a.show_bill()
 
+
+# practice problem  - 4
+'''
+M1. Library. Build three classes: book  (title, available), Member (name, borrowed list), and library (holds book and memebrs ) with a borrow(member, book) method that checks availability and updates both objects.
+
+Noun in the problem        Big enough to be a class?              Becomes
+book                        hold title and book status              yes 
+member                                                              yes
+library                                                             yes
+'''
+
+class Book:
+    def __init__(self, title, available):
+        self.title = title
+        self.available = available
+
+    def __repr__(self):
+            return f"{self.title} {self.available}"
+
+
+class Member:
+    def __init__(self, name, barrowed_list=None):
+        self.name = name
+        self.barrowed_list = barrowed_list if barrowed_list is not None else []
+
+    def __repr__(self):
+        return f"{self.name} {self.barrowed_list}"
+
+
+class library:
+    def __init__(self, books, members):
+        self.books = books
+        self.members = members
+
+    def borrow(self, member, book):
+
+        if member in self.members:
+            print(f"welcom to library {member.name}")
+            if book in self.books and book.available == True:
+                print("requested book issued....")
+                book.available = False
+                member.barrowed_list.append(book.title)
+            else:
+                print(f"requested book is issued to another member come back in few days")
+        else:
+            print(f"to issue book you need to become memeber first")
+
+
+
+
+geeta = Book("geeta", True)
+nolife = Book("nolife", True)
+
+aneesh = Member("Aneesh", ["lostword", "YourName"])
+ane = Member("Ane")
+
+members = [aneesh , ane]
+books = [geeta , nolife]
+
+city_library = library(books, members)
+
+city_library.borrow(aneesh, geeta)
+city_library.borrow(ane, geeta)
+city_library.borrow("aness", geeta)
+
