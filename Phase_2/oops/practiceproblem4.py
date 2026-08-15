@@ -246,6 +246,65 @@ books = [geeta , nolife]
 
 city_library = library(books, members)
 
+
+'''
+M2. Quiz app. A Question (text, answer) and a Quiz that holds many Questions and has a run() method that asks each and scores the user.
+
+Noun in the problem        Big enough to be a class?              Becomes
+question                   hold question and its answer           yes
+quiz                       hold the question and run method       yes 
+
+
+--> question class used to create an object with test and answer --> the quiz class hold many question object and use run  method to ask those question and asaign score for each correct answer and maybe we can add another method that will the score at the end or include it in run method
+
+'''
+class Question :
+    def __init__(self, text, answer ):
+        self.text = text
+        self.answer = answer
+
+class Quiz:
+    def __init__(self, questions):
+        self.questions = questions
+
+    def run(self):
+        print("----Welcome to Common Knowledge Quiz----")
+        
+        score = 0
+        for index,ques in self.questions:
+            print()
+            print(f"Question No -> {index + 1}")
+            print(ques.text)
+            ans = float(input("enter answer using numerical value --> "))
+
+            print()
+            if ans == ques.answer:
+                score +=1
+                print(f"Correct answer...! \nYour score = {score}")
+            else:
+                print(f"incorrect answer...! \nYour score = {score}")
+
+        print()
+        print("=" * 25)
+        print(f"Quiz Complete \nFinal Score : {score} / {len(self.questions)} ")
+
+q1 = Question("total plantes in our solar system", 9)
+q2 = Question("how many wonders do we have in world", 7)
+q3 = Question("how many bones human body have", 207)
+q4 = Question("what is the value of pi", 3.14)
+q5 = Question("how many colors are present in rainbow", 7)
+
+ques = [q1,q2,q3,q4,q5]
+
+obj = Quiz(ques)
+obj.run()
+
+Practice Question - 6
+
+
+
+
+
 city_library.borrow(aneesh, geeta)
 city_library.borrow(ane, geeta)
 city_library.borrow("aness", geeta)
