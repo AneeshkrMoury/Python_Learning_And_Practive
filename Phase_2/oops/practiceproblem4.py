@@ -245,8 +245,11 @@ members = [aneesh , ane]
 books = [geeta , nolife]
 
 city_library = library(books, members)
+city_library.borrow(aneesh, geeta)
+city_library.borrow(ane, geeta)
+city_library.borrow("aness", geeta)
 
-
+#practice question -5 
 '''
 M2. Quiz app. A Question (text, answer) and a Quiz that holds many Questions and has a run() method that asks each and scores the user.
 
@@ -298,14 +301,3 @@ ques = [q1,q2,q3,q4,q5]
 
 obj = Quiz(ques)
 obj.run()
-
-Practice Question - 6
-
-
-
-
-
-city_library.borrow(aneesh, geeta)
-city_library.borrow(ane, geeta)
-city_library.borrow("aness", geeta)
-
