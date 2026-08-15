@@ -301,3 +301,20 @@ ques = [q1,q2,q3,q4,q5]
 
 obj = Quiz(ques)
 obj.run()
+
+#Question Number 7
+'''
+I1. What is composition (the "has-a" relationship)? Give an example of an object that holds other objects and explain why that's useful
+Ans-> Composition = one object/class contains other objects and uses them to do its job.
+
+'''
+#Question no - 8
+'''
+12 Inthe food app, why is total() amethod on order and noton Nenurtes or Restaurant ? Explain responsibility” in your answer
+Ans -> Order should have total() because calculating the total is the responsibility of an order. The Order object contains the items that were ordered, so it has the data needed to calculate the total. MenuItem is responsible for its own price, while Restaurant is responsible for its menu, not a customer's order.
+'''
+#Question no -9
+'''
+When you have several related classes, how do you decide what belongs in each? Give one sign a class is doing too much
+Ans -> Related classes should each have their own clear responsibility. Put the data and methods that belong to that responsibility in that class. One sign that a class is doing too much is when it has several unrelated responsibilities or methods.
+'''
