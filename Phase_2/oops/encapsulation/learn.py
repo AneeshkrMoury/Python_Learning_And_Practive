@@ -72,3 +72,78 @@ a.__balance = 500  # incorrect will not work as classified as private variable
 print(a.balance)
 a.balance = 2000
 print(a.balance)
+
+'''
+dunder methods : ->  Dunder ("double underscore")
+methods — also called magic methods — let your objects work with Python's built-in features like printing, len() , == , and + . You've already used one: __init__
+
+|----------------------------------------------------------------------------|
+|Dunder      |   Runs when you...                                            |
+|----------------------------------------------------------------------------|
+|__init__    |   create the object (you know this one)                       |
+|__str__     |   use print(obj) — a friendly, readable form                  |
+|__repr__    |   inspect the object in the shell / debugger — a precise form |
+|__len__     |   call len(obj)                                               | 
+|__eq__      |   compare with ==                                             |
+|__add__     |   use + between objects                                       |
+| __mul__    |   *  multiply                                                 |
+|__truediv__ |   / divide                                                    |
+| __lt__     |   < less then                                                 |
+| __gt__     |   > greater then                                              |
+|----------------------------------------------------------------------------|
+
+
+'''
+class Student:
+    def __init__(self, name , age):
+        self.name = name
+        self.age = age
+
+    def intro(self):
+        print(f"hellow my name is {self.name} and my age is {self.age}")
+    def performance(self, marks):
+        if marks>60:
+            print(f"{self.name} is good in STUD")
+        else:
+            print(f"{self.name} is not good at study")
+
+    def __str__(self): # __str__() this is a dender method for print
+        return f"objected ceated with name {self.name}"
+
+    def __repr__(self): # __str__() this is a dender method for print
+        return f"{self.name} here , i am from REPR"
+    def __len__(self):
+        return len(self.name)
+
+s1 = Student("Aneesh", 18)
+print(len(s1))  #__len__()
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __eq__(self, other): # point1 == point2
+        return self.x == other.x and self.y == other.y
+    
+print(Point(1, 2) == Point(1, 2)) # True — same values
+print(Point(1, 2) == Point(9, 9)) # False
+
+
+
+'''
+__slots__ — a performance boost
+By default every object stores its attributes in a hidden dictionary ( __dict__ ), which is flexible but uses memory. __slots__ tells
+Python the exact attributes a class will have — saving memory and speeding up access when you create many objects.
+
+'''
+
+class Point:
+    __slots__ = ["x", "y"] # only these two attributes allowed
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+p = Point(2, 3)
+p.x = 10 # fine
+p.z = 5 # AttributeError — not in __slots__
