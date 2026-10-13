@@ -82,3 +82,130 @@ while digit>0:
     
 
 print(revers)
+
+
+'''
+100 Must-Do Problem-Solving Questions 
+Stage 1: Logic & Basic Thinking Part 2
+'''
+
+'''
+Problem No - 8 - 15
+'''
+
+'''
+8. Check whether an integer is a palindrome. 
+Example: 
+121 → Palindrome 
+123 → Not Palindrome
+'''
+number = int(input("enter a number: "))
+
+# using build in function
+n = str(number)
+res = n[::-1]
+if n == res:
+    print(True)
+else:
+    print(False)
+
+#cutome function
+def is_palindrome(num):
+    n = str(num)
+    revs = ""
+    while num > 0:
+        remainder = num % 10
+        revs = revs + str(remainder)
+        num = num // 10
+
+    if n == revs:
+        return f"{n} is a Palindrom"
+
+    return f"{n} is not a Palindrom"
+
+print(is_palindrome(4523254))
+
+
+'''
+9. Find the largest of three numbers without using max(). 
+'''
+def max_num(n1, n2, n3): # ignoring the case where all 3 are equals for this question 
+    if n1>n2 and n1> n3:
+        return f"max = {n1}"
+    elif n2 > n1 and n2>n3:
+        return f"max = {n2}"
+    else:
+        return f"max = {n3}"
+
+print(max_num(45,36,-99))
+
+''' 
+10 Find the smallest of three numbers without using min(). 
+'''
+def min_num(n1, n2, n3): # ignoring the case where all 3 are equals for this question 
+    if n1<n2 and n1< n3:
+        return f"min = {n1}"
+    elif n2 < n1 and n2 < n3:
+        return f"min = {n2}"
+    else:
+        return f"min = {n3}"
+
+print(min_num(45,36,-99))
+
+'''
+11  Check whether a number is positive, negative, or zero.
+'''
+def num_type(num):
+    if num > 0:
+        return "Positive"
+    elif num < 0:
+        return "Negative"
+    else:
+        return "Zero"
+
+print(num_type(54))
+
+'''
+12  Check whether a number is divisible by both 3 and 5. 
+'''
+def check_division(num):
+    if num%5 == 0 and num%3 == 0:
+        return f"{num} is Divisble by both 5 and 3"
+
+    return f"{num} is not Divisble by both 5 and 3"
+
+print(check_division(8715))
+
+'''
+13  Calculate the power of a number using a loop, without using **. 
+Example: 2^5 → 32 
+'''
+def power_calc(num , power):
+    result = 1
+    for i in range(1, power+1):
+        result = result * num
+
+    return f"{num}^{power} -> {result}"
+
+print(power_calc(5, 2))
+
+'''
+14  Find the average of N numbers without using sum(). 
+'''
+def avg(n): # does not work for - negatvie input 
+    sum = 0
+    for i in range(1,n+1):
+        sum = sum + i
+
+    return f"Average of {n} numbers -> {sum / n}"
+
+print(avg(-1000))
+
+'''
+15. Print the multiplication table of a given number. 
+'''
+def table(n):
+    for i in range(1,10+1):
+        print(f"{n}*{i} = {n*i}")
+
+table(17)
