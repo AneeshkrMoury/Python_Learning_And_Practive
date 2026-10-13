@@ -1,5 +1,93 @@
 '''
 100 Must-Do Problem-Solving Questions 
+Stage 2: Logic & Basic Thinking Part 1  question no 16 -20 
+'''
+ 
+'''
+16. Check whether a number is prime. 
+prime numbers are those number divisible by only 1 and themselves 
+'''
+def is_prime(num):
+    if num == 1:
+        return f"{num} is a Prime Number"
+    i = 2
+    while i < (num//2)+1:
+        if num % i == 0:
+            return f"{num} is not a Prime Number"
+        i = i+1
+    return f"{num} is a Prime Number"
+
+print(is_prime(5))
+
+'''
+17. Print all prime numbers from 1 to N.
+'''
+
+def is_prime_nth(n):
+    prime_number = [1,]
+    for i in range(2, n+1):
+        factor = 0
+        j = 2
+        while j < (i//2)+1:
+            if i % j == 0:
+                factor = factor + 1
+            j = j+1       
+        if factor == 0:
+            prime_number.append(i)
+    return prime_number
+print(is_prime_nth(20))
+
+'''
+18. Find all factors of a number. 
+'''
+def factor(number):
+    factor = []
+    for i in range(1, number+1):
+        if number % i == 0:
+            factor.append(i)
+    return(factor)
+print(factor(3549))
+
+
+'''
+19. Check whether a number is a perfect number. 
+Example: 
+6 → 1 + 2 + 3 = 6 
+'''
+
+def perfect_number(number):
+    factor = []
+    for i in range(1, number):
+        if number % i == 0:
+            factor.append(i)
+
+    if sum(factor) == number:
+        return(True)
+    else:
+        return(False)
+print(perfect_number(28))
+
+
+'''
+20. Check whether a number is an Armstrong number. 
+Example: 
+153 → 1³ + 5³ + 3³ = 153
+'''
+def Armstrong_number(number):
+    sum = 0
+    num = str(number)
+    digit_len = len(num)
+    for n in num:
+        sum = sum + (int(n) ** digit_len)
+    if sum == number:
+        return f"{number} is a Armstrong number"
+
+    return f"{number} is not a Armstrong number"
+
+print(Armstrong_number(300))
+
+'''
+100 Must-Do Problem-Solving Questions 
 Stage 2: Logic & Basic Thinking Part 2  question no 21 - 25
 '''
 '''
